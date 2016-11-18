@@ -164,7 +164,7 @@ public class DragItem {
     }
 
     @SuppressWarnings("unused")
-    void setX(float x) {
+    void setX(float x) {    
         mPosX = x;
         updatePosition();
     }
