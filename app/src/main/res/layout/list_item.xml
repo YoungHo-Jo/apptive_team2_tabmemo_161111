@@ -25,14 +25,14 @@
     android:layout_height="wrap_content"
     android:layout_weight="1">
     <ImageView
-        android:id="@+id/titlebar_image1"
+        android:id="@+id/rowbar_image1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher"
         android:layout_weight="0.1"/>
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/row_text"
         android:text= "티미미"
         android:textSize="35dp"
         android:gravity="center"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.9"/>
     <ImageView
-        android:id="@+id/titlebar_image2"
+        android:id="@+id/rowbar_image2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher"

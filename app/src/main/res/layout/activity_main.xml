@@ -9,12 +9,16 @@
         android:layout_height="60dp"
         android:background="#9D9D9D"
         android:weightSum="1">
+
         <ImageView
+            android:id="@+id/Titlebar_image1"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="#9D9D9D"
+            android:background="#3D9D9D"
             android:layout_weight="0.0"/>
+
         <TextView
+            android:id="@+id/Titlebar_text"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:text="#앱티브"
@@ -23,10 +27,12 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1.0"/>
+
         <ImageView
+            android:id="@+id/Titlebar_image2"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="#9D9D9D"
+            android:background="#3D9D9B"
             android:layout_weight="0.0"/>
         
         

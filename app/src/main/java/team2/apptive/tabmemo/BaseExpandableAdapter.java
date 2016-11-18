@@ -1,24 +1,26 @@
 package team2.apptive.tabmemo;
 
+import java.util.ArrayList;
+
+import android.content.Context;
 import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by a0nes on 2016-11-19.
- */
 
-public class BaseExpandableAdapter extends BaseExpandableListAdapter {
-  private ArrayList<string> groupList = null;
-  private ArrayList<arraylist<string>> childList = null;
+public class BaseExpandableAdapter extends BaseExpandableListAdapter{
+
+  private ArrayList<String> groupList = null;
+  private ArrayList<ArrayList<String>> childList = null;
   private LayoutInflater inflater = null;
   private ViewHolder viewHolder = null;
 
-  public BaseExpandableAdapter(Context c, ArrayList<string> groupList,
-                               ArrayList<arraylist<string>> childList){
+  public BaseExpandableAdapter(Context c, ArrayList<String> groupList,
+                               ArrayList<ArrayList<String>> childList){
     super();
     this.inflater = LayoutInflater.from(c);
     this.groupList = groupList;
@@ -52,9 +54,10 @@ public class BaseExpandableAdapter extends BaseExpandableListAdapter {
 
     if(v == null){
       viewHolder = new ViewHolder();
-      v = inflater.inflate(R.layout.list_row, parent, false);
-      viewHolder.tv_groupName = (TextView) v.findViewById(R.id.tv_group);
-      viewHolder.iv_image = (ImageView) v.findViewById(R.id.iv_image);
+      v = inflater.inflate(R.layout.list_item, parent, false);
+      viewHolder.tv_groupName = (TextView) v.findViewById(R.id.row_text);
+      viewHolder.iv_image = (ImageView) v.findViewById(R.id.rowbar_image1);
+      viewHolder.iv_image = (ImageView) v.findViewById(R.id.rowbar_image2);
       v.setTag(viewHolder);
     }else{
       viewHolder = (ViewHolder)v.getTag();
@@ -64,7 +67,7 @@ public class BaseExpandableAdapter extends BaseExpandableListAdapter {
     if(isExpanded){
       viewHolder.iv_image.setBackgroundColor(Color.GREEN);
     }else{
-      viewHolder.iv_image.setBackgroundColor(Color.WHITE);
+      viewHolder.iv_image2.setBackgroundColor(Color.WHITE);
     }
 
     viewHolder.tv_groupName.setText(getGroup(groupPosition));
@@ -99,8 +102,10 @@ public class BaseExpandableAdapter extends BaseExpandableListAdapter {
 
     if(v == null){
       viewHolder = new ViewHolder();
-      v = inflater.inflate(R.layout.list_row, null);
-      viewHolder.tv_childName = (TextView) v.findViewById(R.id.tv_child);
+      v = inflater.inflate(R.layout.child_list_item, null);
+      viewHolder.tv_child_image = (ImageView) v.findViewById(R.id.child_image);
+      viewHolder.tv_child_image2 = (ImageView) v.findViewById(R.id.child_text);
+      viewHolder.tv_childName = (TextView) v.findViewById(R.id.child_image2);
       v.setTag(viewHolder);
     }else{
       viewHolder = (ViewHolder)v.getTag();
@@ -112,14 +117,22 @@ public class BaseExpandableAdapter extends BaseExpandableListAdapter {
   }
 
   @Override
-  public boolean hasStableIds() { return true; }
+  public boolean hasStableIds() {	return true; }
 
   @Override
   public boolean isChildSelectable(int groupPosition, int childPosition) { return true; }
 
   class ViewHolder {
     public ImageView iv_image;
+    public ImageView iv_image2;
     public TextView tv_groupName;
     public TextView tv_childName;
+    public ImageView tv_child_image;
+    public ImageView tv_child_image2;
   }
+
 }
+
+
+
+
