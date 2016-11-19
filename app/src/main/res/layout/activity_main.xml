@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    android:id="@+id/main_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/container"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
-
-    <ListView
-        android:id="@+id/lvToDoList"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="60dp"
+        android:background="#9D9D9D"
+        android:weightSum="1">
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
-        app:layout_anchor="@id/lvToDoList"
-        app:layout_anchorGravity="bottom|right|end"
-        app:layout_behavior="com.codepath.floatingactionbuttontest.ScrollAwareFABBehavior" />
+        <ImageView
+            android:id="@+id/Titlebar_image1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#3D9D9D"
+            android:layout_weight="0.0"/>
 
-</android.support.design.widget.CoordinatorLayout>
+        <TextView
+            android:id="@+id/Titlebar_text"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="#앱티브"
+            android:textColor="@drawable/card_view_drag_foreground"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1.0"/>
+
+        <ImageView
+            android:id="@+id/Titlebar_image2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#3D9D9B"
+            android:layout_weight="0.0"/>
+        
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+</FrameLayout>

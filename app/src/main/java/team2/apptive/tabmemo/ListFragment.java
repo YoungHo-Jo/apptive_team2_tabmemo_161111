@@ -37,7 +37,7 @@ public class ListFragment extends Fragment {
   @Nullable
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    View view = inflater.inflate(R.layout.mainid, container, false);
+    View view = inflater.inflate(R.layout.list_layout, container, false);
 
     mDragListView = (DragListView) view.findViewById(R.id.listviewid);
     mDragListView.getRecyclerView().setVerticalScrollBarEnabled(true);
