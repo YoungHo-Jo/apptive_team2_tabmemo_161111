@@ -91,6 +91,7 @@ class DragItemRecyclerView extends RecyclerView implements AutoScroller.AutoScro
             @Override
             public void onDraw(Canvas c, RecyclerView parent, State state) {
                 super.onDraw(c, parent, state);
+                System.out.println(mDropTargetBackgroundDrawable);
                 drawDecoration(c, parent, mDropTargetBackgroundDrawable);
             }
 
